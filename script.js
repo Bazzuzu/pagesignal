@@ -2,6 +2,33 @@
    CONVERSION AUDIT — Minimal JS
    ======================================== */
 
+// --- Theme toggle ---
+(function () {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  const icon = btn.querySelector('.theme-fab__icon');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    const isDark = theme === 'dark';
+    icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  // Sync icon to initial theme (already set by inline <head> script)
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+  btn.addEventListener('click', function () {
+    const current = document.documentElement.getAttribute('data-theme');
+    // Spin the icon on click for a snappy feel
+    icon.style.transform = 'rotate(180deg)';
+    setTimeout(function () { icon.style.transform = ''; }, 450);
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+})();
+
 // --- Nav scroll effect: frosted glass + hide-on-down / show-on-up ---
 const nav = document.querySelector('.nav');
 let lastScrollY = window.scrollY;

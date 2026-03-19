@@ -11,6 +11,15 @@
   <meta property="og:description" content="AI-powered conversion audit verified by 8 years of product design expertise. Prioritized fixes in 48 hours.">
   <meta property="og:type" content="website">
 
+  <!-- Theme: set before render to avoid flash of wrong theme -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -684,6 +693,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Theme toggle FAB -->
+  <button class="theme-fab" id="theme-toggle" aria-label="Switch to dark mode">
+    <span class="material-symbols-sharp theme-fab__icon" aria-hidden="true">dark_mode</span>
+  </button>
 
   <script src="script.js"></script>
   <script>

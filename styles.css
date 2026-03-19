@@ -44,6 +44,22 @@
   --focus-ring: 0 0 0 3px rgba(126, 82, 244, 0.4);
 }
 
+/* =============================================
+   DARK THEME — [data-theme="dark"] on <html>
+   ============================================= */
+[data-theme="dark"] {
+  --bg: #0E0D1C;
+  --bg-subtle: #0A0917;
+  --bg-card: #1A1930;
+  --bg-card-highlight: #1E1D35;
+  --text-primary: #EAEAF0;
+  --text-secondary: #8585A0;
+  --border: rgba(255, 255, 255, 0.08);
+  --bg-dark: #070614;
+  --bg-dark-card: #111028;
+  --footer-bg: #070614;
+}
+
 /* --- A11y: prefers-reduced-motion --- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1484,6 +1500,148 @@ section {
 .reveal--visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =============================================
+   DARK THEME — Component overrides
+   ============================================= */
+
+/* Nav */
+[data-theme="dark"] .nav--scrolled {
+  background-color: rgba(14, 13, 28, 0.8);
+}
+[data-theme="dark"] .nav__link {
+  color: rgba(255, 255, 255, 0.5);
+}
+[data-theme="dark"] .nav__link:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+[data-theme="dark"] .nav__cta {
+  color: rgba(255, 255, 255, 0.7);
+  background:
+    linear-gradient(#0E0D1C, #0E0D1C) padding-box,
+    conic-gradient(from var(--border-angle, 0deg), #6cdac4, #a78bfa, #ec4899, #6cdac4) border-box;
+}
+[data-theme="dark"] .nav__logo-svg {
+  filter: invert(1);
+}
+
+/* Hero */
+[data-theme="dark"] .h1-muted {
+  color: rgba(255, 255, 255, 0.3);
+}
+[data-theme="dark"] .hero::before {
+  background: radial-gradient(ellipse at center, rgba(126, 82, 244, 0.15) 0%, transparent 70%);
+}
+
+/* Buttons */
+[data-theme="dark"] .btn--outline {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+[data-theme="dark"] .btn--outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Timeline */
+[data-theme="dark"] .timeline__steps::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .timeline__dot {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--bg-subtle);
+}
+[data-theme="dark"] .timeline__step--active .timeline__dot {
+  background: var(--text-primary);
+  border-color: var(--bg-subtle);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+[data-theme="dark"] .result-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border);
+}
+
+/* Demo */
+[data-theme="dark"] .demo__card {
+  border-color: var(--border);
+  box-shadow: none;
+}
+[data-theme="dark"] .demo__card-img {
+  background: linear-gradient(145deg, #1A1930 0%, #111028 100%);
+}
+[data-theme="dark"] .demo__contrast {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Pricing */
+[data-theme="dark"] .pricing-card--primary {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+[data-theme="dark"] .pricing-card--secondary:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+[data-theme="dark"] .pricing-card__badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+/* FAQ */
+[data-theme="dark"] .faq-item {
+  border-bottom-color: var(--border);
+}
+[data-theme="dark"] .faq-item:first-child {
+  border-top-color: var(--border);
+}
+
+/* --- Theme FAB (bottom-right floating toggle) --- */
+.theme-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition:
+    transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+.theme-fab:hover {
+  transform: scale(1.12);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 12px 32px rgba(0, 0, 0, 0.12);
+}
+.theme-fab:active {
+  transform: scale(0.94);
+}
+.theme-fab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.theme-fab__icon {
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-variation-settings: 'wght' 300, 'FILL' 0, 'GRAD' 0, 'opsz' 24;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+  user-select: none;
+}
+.theme-fab:hover .theme-fab__icon {
+  transform: rotate(30deg);
+  color: var(--text-primary);
 }
 
 /* --- Responsive --- */
