@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PageSignal — Conversion Audit for Landing Pages</title>
+  <meta name="description" content="AI-powered conversion audit verified by 8 years of product design expertise. Prioritized fixes for your landing page in 48 hours.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PageSignal — Conversion Audit for Landing Pages">
+  <meta property="og:description" content="AI-powered conversion audit verified by 8 years of product design expertise. Prioritized fixes in 48 hours.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (CDN, lightweight) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of pages can you audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Landing pages, marketing sites, product pages, checkout flows, lead generation funnels. If it's designed to convert visitors into customers or leads — it's in scope. I don't audit complex B2B SaaS product interfaces (dashboards, admin panels) — those require user research that can't be done remotely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from free AI audit tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free tools give you a generic checklist. My AI agents are specifically configured to analyze conversion patterns — not just 'is there a CTA?' but 'is the CTA hierarchy working for this specific conversion goal?' Then I verify every finding, remove false positives, and add strategic context no AI provides. You get expert judgment at the speed of automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I don't agree with the recommendations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The report is a starting point, not a mandate. Every recommendation includes reasoning — you'll understand not just what to change, but why. If something doesn't fit your business context, skip it and focus on what does."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you implement the changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The report is designed to be implementation-ready — specific enough for your designer or developer to act on. If you need a deeper engagement including wireframes and implementation guidance, that's what the Deep Audit is for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I see an example before I buy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — scroll up to 'See what you'll get' for a full example audit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's your refund policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If the audit doesn't surface at least 5 actionable findings that you didn't already know about, I'll refund you in full. No questions."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip link for keyboard navigation -->
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="PageSignal home">
+        <svg class="nav__logo-svg" width="139" height="24" viewBox="0 0 139 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 0H6C2.68629 0 0 2.68629 0 6V18C0 21.3137 2.68629 24 6 24H18C21.3137 24 24 21.3137 24 18V6C24 2.68629 21.3137 0 18 0Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.9039 17.4203L17.0996 19.7432L13.7555 13.5L20.4664 15.3202L18.465 16.6831L20.5 18.315L19.9389 19.0522L17.9039 17.4203Z" fill="white"/>
+          <path d="M4.5 12H12.2941C12.2941 16.4183 8.80455 20 4.5 20V12Z" fill="white"/>
+          <path d="M12.2941 12C12.2941 7.5817 8.80455 4 4.5 4V12H12.2941Z" fill="white"/>
+          <path d="M20.0882 4C15.7836 4 12.2941 7.5817 12.2941 12H16.1912C18.3434 12 20.0882 10.2092 20.0882 8V4Z" fill="white"/>
+          <path d="M33.3532 19V5H39.1132C39.9932 5 40.7665 5.18 41.4332 5.54C42.1132 5.88667 42.6399 6.38 43.0132 7.02C43.3999 7.66 43.5932 8.42 43.5932 9.3V9.58C43.5932 10.4467 43.3932 11.2067 42.9932 11.86C42.6065 12.5 42.0732 13 41.3932 13.36C40.7265 13.7067 39.9665 13.88 39.1132 13.88H35.9932V19H33.3532ZM35.9932 11.48H38.8532C39.4799 11.48 39.9865 11.3067 40.3732 10.96C40.7599 10.6133 40.9532 10.14 40.9532 9.54V9.34C40.9532 8.74 40.7599 8.26667 40.3732 7.92C39.9865 7.57333 39.4799 7.4 38.8532 7.4H35.9932V11.48ZM48.3882 19.28C47.6815 19.28 47.0482 19.16 46.4882 18.92C45.9282 18.6667 45.4815 18.3067 45.1482 17.84C44.8282 17.36 44.6682 16.78 44.6682 16.1C44.6682 15.42 44.8282 14.8533 45.1482 14.4C45.4815 13.9333 45.9349 13.5867 46.5082 13.36C47.0949 13.12 47.7615 13 48.5082 13H51.2282V12.44C51.2282 11.9733 51.0815 11.5933 50.7882 11.3C50.4949 10.9933 50.0282 10.84 49.3882 10.84C48.7615 10.84 48.2949 10.9867 47.9882 11.28C47.6815 11.56 47.4815 11.9267 47.3882 12.38L45.0682 11.6C45.2282 11.0933 45.4815 10.6333 45.8282 10.22C46.1882 9.79333 46.6615 9.45333 47.2482 9.2C47.8482 8.93333 48.5749 8.8 49.4282 8.8C50.7349 8.8 51.7682 9.12667 52.5282 9.78C53.2882 10.4333 53.6682 11.38 53.6682 12.62V16.32C53.6682 16.72 53.8549 16.92 54.2282 16.92H55.0282V19H53.3482C52.8549 19 52.4482 18.88 52.1282 18.64C51.8082 18.4 51.6482 18.08 51.6482 17.68V17.66H51.2682C51.2149 17.82 51.0949 18.0333 50.9082 18.3C50.7215 18.5533 50.4282 18.78 50.0282 18.98C49.6282 19.18 49.0815 19.28 48.3882 19.28ZM48.8282 17.24C49.5349 17.24 50.1082 17.0467 50.5482 16.66C51.0015 16.26 51.2282 15.7333 51.2282 15.08V14.88H48.6882C48.2215 14.88 47.8549 14.98 47.5882 15.18C47.3215 15.38 47.1882 15.66 47.1882 16.02C47.1882 16.38 47.3282 16.6733 47.6082 16.9C47.8882 17.1267 48.2949 17.24 48.8282 17.24ZM56.1954 14.08V13.76C56.1954 12.72 56.4021 11.8333 56.8154 11.1C57.2287 10.3533 57.7754 9.78667 58.4554 9.4C59.1487 9 59.9021 8.8 60.7154 8.8C61.6221 8.8 62.3087 8.96 62.7754 9.28C63.2421 9.6 63.5821 9.93333 63.7954 10.28H64.1554V9.08H66.6354V20.76C66.6354 21.44 66.4354 21.98 66.0354 22.38C65.6354 22.7933 65.1021 23 64.4354 23H57.7954V20.8H63.5554C63.9287 20.8 64.1154 20.6 64.1154 20.2V17.62H63.7554C63.6221 17.8333 63.4354 18.0533 63.1954 18.28C62.9554 18.4933 62.6354 18.6733 62.2354 18.82C61.8354 18.9667 61.3287 19.04 60.7154 19.04C59.9021 19.04 59.1487 18.8467 58.4554 18.46C57.7754 18.06 57.2287 17.4933 56.8154 16.76C56.4021 16.0133 56.1954 15.12 56.1954 14.08ZM61.4354 16.84C62.2087 16.84 62.8554 16.5933 63.3754 16.1C63.8954 15.6067 64.1554 14.9133 64.1554 14.02V13.82C64.1554 12.9133 63.8954 12.22 63.3754 11.74C62.8687 11.2467 62.2221 11 61.4354 11C60.6621 11 60.0154 11.2467 59.4954 11.74C58.9754 12.22 58.7154 12.9133 58.7154 13.82V14.02C58.7154 14.9133 58.9754 15.6067 59.4954 16.1C60.0154 16.5933 60.6621 16.84 61.4354 16.84ZM73.9493 19.28C72.9626 19.28 72.0893 19.0733 71.3293 18.66C70.5826 18.2333 69.996 17.64 69.5693 16.88C69.156 16.1067 68.9493 15.2 68.9493 14.16V13.92C68.9493 12.88 69.156 11.98 69.5693 11.22C69.9826 10.4467 70.5626 9.85333 71.3093 9.44C72.056 9.01333 72.9226 8.8 73.9093 8.8C74.8826 8.8 75.7293 9.02 76.4493 9.46C77.1693 9.88667 77.7293 10.4867 78.1293 11.26C78.5293 12.02 78.7293 12.9067 78.7293 13.92V14.78H71.5093C71.536 15.46 71.7893 16.0133 72.2693 16.44C72.7493 16.8667 73.336 17.08 74.0293 17.08C74.736 17.08 75.256 16.9267 75.5893 16.62C75.9226 16.3133 76.176 15.9733 76.3493 15.6L78.4093 16.68C78.2226 17.0267 77.9493 17.4067 77.5893 17.82C77.2426 18.22 76.776 18.5667 76.1893 18.86C75.6026 19.14 74.856 19.28 73.9493 19.28ZM71.5293 12.9H76.1693C76.116 12.3267 75.8826 11.8667 75.4693 11.52C75.0693 11.1733 74.5426 11 73.8893 11C73.2093 11 72.6693 11.1733 72.2693 11.52C71.8693 11.8667 71.6226 12.3267 71.5293 12.9Z" fill="black" fill-opacity="0.88"/>
+          <path d="M85.7523 19.28C84.6723 19.28 83.7189 19.0867 82.8923 18.7C82.0656 18.3133 81.4189 17.76 80.9523 17.04C80.4856 16.32 80.2523 15.4533 80.2523 14.44V13.88H82.8523V14.44C82.8523 15.28 83.1123 15.9133 83.6323 16.34C84.1523 16.7533 84.8589 16.96 85.7523 16.96C86.6589 16.96 87.3323 16.78 87.7723 16.42C88.2256 16.06 88.4523 15.6 88.4523 15.04C88.4523 14.6533 88.3389 14.34 88.1123 14.1C87.8989 13.86 87.5789 13.6667 87.1523 13.52C86.7389 13.36 86.2323 13.2133 85.6323 13.08L85.1723 12.98C84.2123 12.7667 83.3856 12.5 82.6923 12.18C82.0123 11.8467 81.4856 11.4133 81.1123 10.88C80.7523 10.3467 80.5723 9.65333 80.5723 8.8C80.5723 7.94667 80.7723 7.22 81.1723 6.62C81.5856 6.00667 82.1589 5.54 82.8923 5.22C83.6389 4.88667 84.5123 4.72 85.5123 4.72C86.5123 4.72 87.3989 4.89333 88.1723 5.24C88.9589 5.57333 89.5723 6.08 90.0123 6.76C90.4656 7.42667 90.6923 8.26667 90.6923 9.28V9.88H88.0923V9.28C88.0923 8.74667 87.9856 8.32 87.7723 8C87.5723 7.66667 87.2789 7.42667 86.8923 7.28C86.5056 7.12 86.0456 7.04 85.5123 7.04C84.7123 7.04 84.1189 7.19333 83.7323 7.5C83.3589 7.79333 83.1723 8.2 83.1723 8.72C83.1723 9.06667 83.2589 9.36 83.4323 9.6C83.6189 9.84 83.8923 10.04 84.2523 10.2C84.6123 10.36 85.0723 10.5 85.6323 10.62L86.0923 10.72C87.0923 10.9333 87.9589 11.2067 88.6923 11.54C89.4389 11.8733 90.0189 12.3133 90.4323 12.86C90.8456 13.4067 91.0523 14.1067 91.0523 14.96C91.0523 15.8133 90.8323 16.5667 90.3923 17.22C89.9656 17.86 89.3523 18.3667 88.5523 18.74C87.7656 19.1 86.8323 19.28 85.7523 19.28ZM93.1012 19V9.08H95.6212V19H93.1012ZM94.3612 7.92C93.9078 7.92 93.5212 7.77333 93.2012 7.48C92.8945 7.18667 92.7412 6.8 92.7412 6.32C92.7412 5.84 92.8945 5.45333 93.2012 5.16C93.5212 4.86667 93.9078 4.72 94.3612 4.72C94.8278 4.72 95.2145 4.86667 95.5212 5.16C95.8278 5.45333 95.9812 5.84 95.9812 6.32C95.9812 6.8 95.8278 7.18667 95.5212 7.48C95.2145 7.77333 94.8278 7.92 94.3612 7.92ZM97.9337 14.08V13.76C97.9337 12.72 98.1403 11.8333 98.5537 11.1C98.967 10.3533 99.5137 9.78667 100.194 9.4C100.887 9 101.64 8.8 102.454 8.8C103.36 8.8 104.047 8.96 104.514 9.28C104.98 9.6 105.32 9.93333 105.534 10.28H105.894V9.08H108.374V20.76C108.374 21.44 108.174 21.98 107.774 22.38C107.374 22.7933 106.84 23 106.174 23H99.5337V20.8H105.294C105.667 20.8 105.854 20.6 105.854 20.2V17.62H105.494C105.36 17.8333 105.174 18.0533 104.934 18.28C104.694 18.4933 104.374 18.6733 103.974 18.82C103.574 18.9667 103.067 19.04 102.454 19.04C101.64 19.04 100.887 18.8467 100.194 18.46C99.5137 18.06 98.967 17.4933 98.5537 16.76C98.1403 16.0133 97.9337 15.12 97.9337 14.08ZM103.174 16.84C103.947 16.84 104.594 16.5933 105.114 16.1C105.634 15.6067 105.894 14.9133 105.894 14.02V13.82C105.894 12.9133 105.634 12.22 105.114 11.74C104.607 11.2467 103.96 11 103.174 11C102.4 11 101.754 11.2467 101.234 11.74C100.714 12.22 100.454 12.9133 100.454 13.82V14.02C100.454 14.9133 100.714 15.6067 101.234 16.1C101.754 16.5933 102.4 16.84 103.174 16.84ZM111.168 19V9.08H113.648V10.38H114.008C114.168 10.0333 114.468 9.70667 114.908 9.4C115.348 9.08 116.014 8.92 116.908 8.92C117.681 8.92 118.354 9.1 118.928 9.46C119.514 9.80667 119.968 10.2933 120.288 10.92C120.608 11.5333 120.768 12.2533 120.768 13.08V19H118.248V13.28C118.248 12.5333 118.061 11.9733 117.688 11.6C117.328 11.2267 116.808 11.04 116.128 11.04C115.354 11.04 114.754 11.3 114.328 11.82C113.901 12.3267 113.688 13.04 113.688 13.96V19H111.168ZM126.572 19.28C125.865 19.28 125.232 19.16 124.672 18.92C124.112 18.6667 123.665 18.3067 123.332 17.84C123.012 17.36 122.852 16.78 122.852 16.1C122.852 15.42 123.012 14.8533 123.332 14.4C123.665 13.9333 124.118 13.5867 124.692 13.36C125.278 13.12 125.945 13 126.692 13H129.412V12.44C129.412 11.9733 129.265 11.5933 128.972 11.3C128.678 10.9933 128.212 10.84 127.572 10.84C126.945 10.84 126.478 10.9867 126.172 11.28C125.865 11.56 125.665 11.9267 125.572 12.38L123.252 11.6C123.412 11.0933 123.665 10.6333 124.012 10.22C124.372 9.79333 124.845 9.45333 125.432 9.2C126.032 8.93333 126.758 8.8 127.612 8.8C128.918 8.8 129.952 9.12667 130.712 9.78C131.472 10.4333 131.852 11.38 131.852 12.62V16.32C131.852 16.72 132.038 16.92 132.412 16.92H133.212V19H131.532C131.038 19 130.632 18.88 130.312 18.64C129.992 18.4 129.832 18.08 129.832 17.68V17.66H129.452C129.398 17.82 129.278 18.0333 129.092 18.3C128.905 18.5533 128.612 18.78 128.212 18.98C127.812 19.18 127.265 19.28 126.572 19.28ZM127.012 17.24C127.718 17.24 128.292 17.0467 128.732 16.66C129.185 16.26 129.412 15.7333 129.412 15.08V14.88H126.872C126.405 14.88 126.038 14.98 125.772 15.18C125.505 15.38 125.372 15.66 125.372 16.02C125.372 16.38 125.512 16.6733 125.792 16.9C126.072 17.1267 126.478 17.24 127.012 17.24ZM135.054 19V5H137.574V19H135.054Z" fill="black" fill-opacity="0.4"/>
+        </svg>
+      </a>
+      <nav class="nav__links" aria-label="Site sections">
+        <a href="#how-it-works" class="nav__link">How it works</a>
+        <a href="#example" class="nav__link">Example</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+      </nav>
+      <div class="nav__end">
+        <a href="#pricing" class="nav__cta">Check your site</a>
+      </div>
+      <a href="#pricing" class="nav__cta nav__mobile-cta">Check your site</a>
+    </div>
+  </nav>
+
+  <main>
+  <!-- ======== HERO ======== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1><span class="h1-muted">Your</span> landing page <span class="h1-muted">is leaking </span><span class="h1-gradient">conversions</span>. <span class="h1-muted">I'll show you </span>exactly where.</h1>
+      <p class="hero__sub">AI-powered audit, verified by 8 years of product design expertise. Prioritized fixes in your inbox within 48 hours.</p>
+      <a href="#pricing" class="btn btn--large">
+        <span class="btn__label">Get Your Audit</span>
+        <span class="btn__divider" aria-hidden="true"></span>
+        <span class="btn__price">$99</span>
+        <span class="material-symbols-sharp btn__icon" aria-hidden="true">arrow_right_alt</span>
+      </a>
+      <p class="hero__meta">Launch pricing (regular $199) · No calls, no contracts</p>
+    </div>
+
+    <!-- Hero media: replace with product screenshot, video, or animated SVG -->
+    <div class="hero__media">
+      <div class="hero__media-inner">
+        <div class="hero__media-placeholder">
+          <svg width="100%" height="100%" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Browser chrome -->
+            <rect x="0" y="0" width="960" height="540" rx="12" fill="#1A1A2E" />
+            <rect x="0" y="0" width="960" height="40" rx="12" fill="#252540"/>
+            <rect x="0" y="28" width="960" height="12" fill="#252540"/>
+            <circle cx="20" cy="20" r="5" fill="#FF5F57"/>
+            <circle cx="38" cy="20" r="5" fill="#FEBC2E"/>
+            <circle cx="56" cy="20" r="5" fill="#28C840"/>
+            <rect x="120" y="14" width="200" height="12" rx="6" fill="#1A1A2E"/>
+
+            <!-- Dashboard content -->
+            <rect x="32" y="64" width="200" height="20" rx="4" fill="#7E52F4" opacity="0.3"/>
+            <rect x="32" y="96" width="140" height="12" rx="3" fill="#ffffff" opacity="0.1"/>
+
+            <!-- Chart area -->
+            <rect x="32" y="130" width="580" height="280" rx="8" fill="#ffffff" opacity="0.04"/>
+            <polyline points="60,370 140,320 220,340 300,280 380,300 460,230 540,260 580,200" stroke="#7E52F4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+            <polyline points="60,370 140,350 220,355 300,330 380,340 460,310 540,320 580,290" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.2"/>
+
+            <!-- Annotation callout -->
+            <rect x="400" y="180" width="180" height="72" rx="8" fill="#7E52F4" opacity="0.15"/>
+            <rect x="400" y="180" width="180" height="72" rx="8" stroke="#7E52F4" stroke-width="1" opacity="0.3"/>
+            <rect x="416" y="196" width="100" height="8" rx="2" fill="#ffffff" opacity="0.3"/>
+            <rect x="416" y="212" width="148" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
+            <rect x="416" y="224" width="120" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
+            <line x1="490" y1="252" x2="490" y2="280" stroke="#7E52F4" stroke-width="1" opacity="0.4" stroke-dasharray="4 3"/>
+
+            <!-- Side panel -->
+            <rect x="640" y="64" width="288" height="440" rx="8" fill="#ffffff" opacity="0.04"/>
+            <rect x="664" y="88" width="120" height="10" rx="3" fill="#ffffff" opacity="0.15"/>
+            <rect x="664" y="112" width="240" height="48" rx="6" fill="#7E52F4" opacity="0.1"/>
+            <rect x="680" y="124" width="80" height="6" rx="2" fill="#7E52F4" opacity="0.4"/>
+            <rect x="680" y="136" width="160" height="6" rx="2" fill="#ffffff" opacity="0.1"/>
+            <rect x="664" y="176" width="240" height="48" rx="6" fill="#ffffff" opacity="0.04"/>
+            <rect x="680" y="188" width="100" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
+            <rect x="680" y="200" width="180" height="6" rx="2" fill="#ffffff" opacity="0.1"/>
+            <rect x="664" y="240" width="240" height="48" rx="6" fill="#ffffff" opacity="0.04"/>
+            <rect x="680" y="252" width="90" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
+            <rect x="680" y="264" width="140" height="6" rx="2" fill="#ffffff" opacity="0.1"/>
+
+            <!-- Impact scores -->
+            <rect x="664" y="310" width="100" height="10" rx="3" fill="#ffffff" opacity="0.15"/>
+            <rect x="664" y="334" width="240" height="24" rx="4" fill="#ffffff" opacity="0.04"/>
+            <rect x="664" y="334" width="192" height="24" rx="4" fill="#7E52F4" opacity="0.2"/>
+            <rect x="664" y="366" width="240" height="24" rx="4" fill="#ffffff" opacity="0.04"/>
+            <rect x="664" y="366" width="144" height="24" rx="4" fill="#7E52F4" opacity="0.15"/>
+            <rect x="664" y="398" width="240" height="24" rx="4" fill="#ffffff" opacity="0.04"/>
+            <rect x="664" y="398" width="96" height="24" rx="4" fill="#7E52F4" opacity="0.1"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PROBLEM (Carousel) ======== -->
+  <section class="problem" id="problem">
+    <div class="container container--wide reveal">
+      <h2 class="problem__heading">The <span class="problem__heading-muted">problem</span></h2>
+
+      <div class="carousel" aria-roledescription="carousel" aria-label="Common conversion problems">
+        <div class="carousel__track" aria-live="off">
+          <!-- Slide 1 -->
+          <div class="carousel__slide carousel__slide--active" data-slide="0" role="tabpanel" aria-roledescription="slide" aria-label="Slide 1 of 3">
+            <div class="carousel__card">
+              <div class="carousel__text">
+                <span class="carousel__rule" aria-hidden="true"></span>
+                <h3 class="carousel__title">Traffic without conversions</h3>
+                <p class="carousel__desc">You're spending on ads, SEO, content — driving people to your site. But something's off. Visitors land, scroll a bit, and leave. Your conversion rate feels stuck, but you can't pinpoint what's wrong.</p>
+              </div>
+              <div class="carousel__image">
+                <img src="https://picsum.photos/seed/dashboard1/800/600" alt="Dashboard showing traffic going up but conversions staying flat" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel__slide" data-slide="1" role="tabpanel" aria-roledescription="slide" aria-label="Slide 2 of 3" aria-hidden="true">
+            <div class="carousel__card">
+              <div class="carousel__text">
+                <span class="carousel__rule" aria-hidden="true"></span>
+                <h3 class="carousel__title">Expensive or useless</h3>
+                <p class="carousel__desc">You could hire a CRO agency — $5,000+ and 4-6 weeks for a report that might sit in a folder. You could run another AI tool — free, instant, and generic enough to be useless. Or you could keep guessing.</p>
+              </div>
+              <div class="carousel__image">
+                <img src="https://picsum.photos/seed/webapp2/800/600" alt="Comparison of expensive agencies vs generic AI tools" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel__slide" data-slide="2" role="tabpanel" aria-roledescription="slide" aria-label="Slide 3 of 3" aria-hidden="true">
+            <div class="carousel__card">
+              <div class="carousel__text">
+                <span class="carousel__rule" aria-hidden="true"></span>
+                <h3 class="carousel__title">The gap in between</h3>
+                <p class="carousel__desc">There's a gap between "expensive consultant" and "automated checklist." That's where I work — AI-powered depth, human-verified quality, at a price that makes sense.</p>
+              </div>
+              <div class="carousel__image">
+                <img src="https://picsum.photos/seed/uiscreen3/800/600" alt="The sweet spot between expensive and useless solutions" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="carousel__controls">
+          <div class="carousel__dots" role="tablist" aria-label="Carousel slides">
+            <button class="carousel__dot carousel__dot--active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1: Traffic without conversions"></button>
+            <button class="carousel__dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2: Expensive or useless"></button>
+            <button class="carousel__dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3: The gap in between"></button>
+          </div>
+          <button class="carousel__pause" aria-label="Pause carousel" data-playing="true">
+            <span class="carousel__pause-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== HOW IT WORKS (Timeline) ======== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container container--wide reveal">
+      <p class="section-label">Process</p>
+      <h2>How your audit works</h2>
+      <p class="section-subtitle">Three steps from submission to actionable insights.</p>
+
+      <div class="timeline">
+        <!-- Sticky image area (left) -->
+        <div class="timeline__media">
+          <div class="timeline__media-sticky">
+            <!-- Step 1 image -->
+            <div class="timeline__image timeline__image--active" data-step="1">
+              <svg width="100%" height="100%" viewBox="0 0 520 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="520" height="380" rx="16" fill="#F4F3F8"/>
+                <rect x="40" y="40" width="440" height="48" rx="8" fill="#E8E8ED"/>
+                <rect x="40" y="40" width="440" height="48" rx="8" stroke="#D0D0D8" stroke-width="1"/>
+                <text x="60" y="70" font-family="Space Grotesk" font-size="15" fill="#8E8EA0">https://your-landing-page.com</text>
+                <rect x="400" y="50" width="64" height="28" rx="6" fill="#111"/>
+                <text x="414" y="69" font-family="Space Grotesk" font-size="12" fill="#fff">Submit</text>
+                <rect x="40" y="112" width="200" height="14" rx="4" fill="#E8E8ED"/>
+                <rect x="40" y="136" width="320" height="10" rx="4" fill="#F0F0F4"/>
+                <rect x="40" y="156" width="280" height="10" rx="4" fill="#F0F0F4"/>
+                <rect x="40" y="190" width="440" height="150" rx="12" fill="#fff" stroke="#E8E8ED" stroke-width="1"/>
+                <rect x="60" y="210" width="120" height="12" rx="3" fill="#E8E8ED"/>
+                <rect x="60" y="232" width="200" height="10" rx="3" fill="#F0F0F4"/>
+                <rect x="60" y="260" width="180" height="10" rx="3" fill="#F0F0F4"/>
+                <rect x="60" y="280" width="160" height="10" rx="3" fill="#F0F0F4"/>
+                <rect x="60" y="308" width="100" height="14" rx="4" fill="#E8E8ED"/>
+              </svg>
+            </div>
+            <!-- Step 2 image -->
+            <div class="timeline__image" data-step="2">
+              <svg width="100%" height="100%" viewBox="0 0 520 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="520" height="380" rx="16" fill="#0C0B14"/>
+                <rect x="32" y="32" width="160" height="10" rx="4" fill="rgba(255,255,255,0.08)"/>
+                <rect x="32" y="52" width="100" height="8" rx="3" fill="rgba(255,255,255,0.05)"/>
+                <!-- Scan lines -->
+                <rect x="32" y="80" width="456" height="1" fill="rgba(108,218,196,0.15)"/>
+                <rect x="32" y="120" width="456" height="1" fill="rgba(167,139,250,0.15)"/>
+                <rect x="32" y="160" width="456" height="1" fill="rgba(236,72,153,0.1)"/>
+                <rect x="32" y="200" width="456" height="1" fill="rgba(108,218,196,0.1)"/>
+                <!-- Parameter blocks -->
+                <rect x="32" y="88" width="140" height="24" rx="6" fill="rgba(108,218,196,0.12)"/>
+                <text x="46" y="105" font-family="JetBrains Mono" font-size="11" fill="#6cdac4">CTA clarity</text>
+                <rect x="182" y="88" width="160" height="24" rx="6" fill="rgba(167,139,250,0.12)"/>
+                <text x="196" y="105" font-family="JetBrains Mono" font-size="11" fill="#a78bfa">Visual hierarchy</text>
+                <rect x="352" y="88" width="136" height="24" rx="6" fill="rgba(236,72,153,0.1)"/>
+                <text x="366" y="105" font-family="JetBrains Mono" font-size="11" fill="#ec4899">Trust signals</text>
+                <rect x="32" y="128" width="120" height="24" rx="6" fill="rgba(108,218,196,0.08)"/>
+                <text x="46" y="145" font-family="JetBrains Mono" font-size="11" fill="#6cdac4">Mobile UX</text>
+                <rect x="162" y="128" width="180" height="24" rx="6" fill="rgba(167,139,250,0.08)"/>
+                <text x="176" y="145" font-family="JetBrains Mono" font-size="11" fill="#a78bfa">Messaging alignment</text>
+                <!-- Progress -->
+                <rect x="32" y="240" width="456" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+                <rect x="32" y="240" width="320" height="6" rx="3" fill="url(#scanGrad)"/>
+                <text x="32" y="270" font-family="JetBrains Mono" font-size="12" fill="rgba(255,255,255,0.4)">Analyzing 200+ parameters...</text>
+                <text x="410" y="270" font-family="JetBrains Mono" font-size="12" fill="#6cdac4">70%</text>
+                <!-- Stats -->
+                <rect x="32" y="296" width="140" height="60" rx="10" fill="rgba(255,255,255,0.04)"/>
+                <text x="48" y="318" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#fff">47</text>
+                <text x="48" y="340" font-family="Space Grotesk" font-size="11" fill="rgba(255,255,255,0.4)">Issues found</text>
+                <rect x="190" y="296" width="140" height="60" rx="10" fill="rgba(255,255,255,0.04)"/>
+                <text x="206" y="318" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#6cdac4">12</text>
+                <text x="206" y="340" font-family="Space Grotesk" font-size="11" fill="rgba(255,255,255,0.4)">High impact</text>
+                <rect x="348" y="296" width="140" height="60" rx="10" fill="rgba(255,255,255,0.04)"/>
+                <text x="364" y="318" font-family="Space Grotesk" font-size="22" font-weight="700" fill="#a78bfa">200+</text>
+                <text x="364" y="340" font-family="Space Grotesk" font-size="11" fill="rgba(255,255,255,0.4)">Parameters</text>
+                <defs><linearGradient id="scanGrad" x1="32" y1="243" x2="352" y2="243"><stop stop-color="#6cdac4"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+              </svg>
+            </div>
+            <!-- Step 3 image — Expert review -->
+            <div class="timeline__image" data-step="3">
+              <svg width="100%" height="100%" viewBox="0 0 520 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="520" height="380" rx="16" fill="#FAFAFA"/>
+                <!-- Report header -->
+                <rect x="32" y="28" width="180" height="16" rx="4" fill="#111"/>
+                <rect x="32" y="52" width="260" height="10" rx="3" fill="#E8E8ED"/>
+                <!-- Finding card 1 -->
+                <rect x="32" y="80" width="456" height="80" rx="12" fill="#fff" stroke="#E8E8ED" stroke-width="1"/>
+                <rect x="48" y="94" width="8" height="8" rx="4" fill="#EF4444"/>
+                <rect x="64" y="92" width="180" height="12" rx="3" fill="#111"/>
+                <rect x="64" y="112" width="320" height="8" rx="3" fill="#D0D0D8"/>
+                <rect x="64" y="128" width="280" height="8" rx="3" fill="#E8E8ED"/>
+                <rect x="400" y="94" width="72" height="22" rx="6" fill="#FEE2E2"/>
+                <text x="416" y="109" font-family="Space Grotesk" font-size="10" font-weight="600" fill="#EF4444">High</text>
+                <!-- Finding card 2 -->
+                <rect x="32" y="172" width="456" height="80" rx="12" fill="#fff" stroke="#E8E8ED" stroke-width="1"/>
+                <rect x="48" y="186" width="8" height="8" rx="4" fill="#F59E0B"/>
+                <rect x="64" y="184" width="200" height="12" rx="3" fill="#111"/>
+                <rect x="64" y="204" width="340" height="8" rx="3" fill="#D0D0D8"/>
+                <rect x="64" y="220" width="260" height="8" rx="3" fill="#E8E8ED"/>
+                <rect x="400" y="186" width="72" height="22" rx="6" fill="#FEF3C7"/>
+                <text x="410" y="201" font-family="Space Grotesk" font-size="10" font-weight="600" fill="#F59E0B">Medium</text>
+                <!-- Expert annotation -->
+                <rect x="32" y="270" width="456" height="80" rx="12" fill="#F0EDFF" stroke="#D4CCFF" stroke-width="1"/>
+                <rect x="48" y="286" width="24" height="24" rx="12" fill="#7E52F4"/>
+                <text x="55" y="303" font-family="Space Grotesk" font-size="12" font-weight="700" fill="#fff">L</text>
+                <rect x="82" y="286" width="160" height="12" rx="3" fill="#7E52F4" opacity="0.6"/>
+                <rect x="82" y="306" width="380" height="8" rx="3" fill="#7E52F4" opacity="0.2"/>
+                <rect x="82" y="322" width="300" height="8" rx="3" fill="#7E52F4" opacity="0.15"/>
+              </svg>
+            </div>
+            <!-- Step 4 image — Delivered report -->
+            <div class="timeline__image" data-step="4">
+              <svg width="100%" height="100%" viewBox="0 0 520 380" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="520" height="380" rx="16" fill="#F4F3F8"/>
+                <!-- Inbox / email mockup -->
+                <rect x="32" y="28" width="456" height="52" rx="10" fill="#fff" stroke="#E8E8ED" stroke-width="1"/>
+                <circle cx="58" cy="54" r="14" fill="#6cdac4" opacity="0.2"/>
+                <text x="53" y="59" font-family="Space Grotesk" font-size="14" font-weight="700" fill="#6cdac4">✓</text>
+                <rect x="82" y="42" width="200" height="12" rx="3" fill="#111"/>
+                <rect x="82" y="60" width="140" height="8" rx="3" fill="#D0D0D8"/>
+                <rect x="402" y="44" width="72" height="20" rx="6" fill="#DCFCE7"/>
+                <text x="414" y="58" font-family="Space Grotesk" font-size="10" font-weight="600" fill="#16A34A">Delivered</text>
+                <!-- Report preview -->
+                <rect x="32" y="96" width="456" height="252" rx="12" fill="#fff" stroke="#E8E8ED" stroke-width="1"/>
+                <rect x="52" y="116" width="160" height="14" rx="3" fill="#111"/>
+                <rect x="52" y="138" width="260" height="8" rx="3" fill="#E8E8ED"/>
+                <!-- Findings summary -->
+                <rect x="52" y="168" width="416" height="1" fill="#F0F0F4"/>
+                <rect x="52" y="184" width="80" height="10" rx="3" fill="#EF4444" opacity="0.15"/>
+                <rect x="140" y="184" width="200" height="10" rx="3" fill="#E8E8ED"/>
+                <rect x="52" y="204" width="80" height="10" rx="3" fill="#F59E0B" opacity="0.15"/>
+                <rect x="140" y="204" width="240" height="10" rx="3" fill="#E8E8ED"/>
+                <rect x="52" y="224" width="80" height="10" rx="3" fill="#6cdac4" opacity="0.2"/>
+                <rect x="140" y="224" width="180" height="10" rx="3" fill="#E8E8ED"/>
+                <!-- Video walkthrough thumbnail -->
+                <rect x="52" y="256" width="180" height="72" rx="8" fill="#0C0B14"/>
+                <circle cx="142" cy="292" r="16" fill="rgba(255,255,255,0.15)"/>
+                <polygon points="137,284 137,300 151,292" fill="#fff"/>
+                <rect x="252" y="260" width="120" height="12" rx="3" fill="#111"/>
+                <rect x="252" y="280" width="200" height="8" rx="3" fill="#D0D0D8"/>
+                <rect x="252" y="296" width="160" height="8" rx="3" fill="#E8E8ED"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline steps (right) -->
+        <div class="timeline__steps">
+          <div class="timeline__step timeline__step--active" data-step="1">
+            <div class="timeline__indicator">
+              <span class="timeline__dot"></span>
+              <span class="timeline__line"></span>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__number">01</span>
+              <h3 class="timeline__title">You send your page</h3>
+              <p class="timeline__desc">Share a URL or screenshots. Tell me what you're trying to convert — signups, purchases, leads — and who your audience is. Takes 2 minutes.</p>
+            </div>
+          </div>
+
+          <div class="timeline__step" data-step="2">
+            <div class="timeline__indicator">
+              <span class="timeline__dot"></span>
+              <span class="timeline__line"></span>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__number">02</span>
+              <h3 class="timeline__title">AI agents analyze 200+ conversion parameters</h3>
+              <p class="timeline__desc">Visual hierarchy, CTA clarity, messaging alignment, mobile UX, trust signals, cognitive load, form friction — systematically, not randomly. This is the depth that takes a human consultant days. My agents do it in hours.</p>
+            </div>
+          </div>
+
+          <div class="timeline__step" data-step="3">
+            <div class="timeline__indicator">
+              <span class="timeline__dot"></span>
+              <span class="timeline__line"></span>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__number">03</span>
+              <h3 class="timeline__title">I verify everything and add what AI can't see</h3>
+              <p class="timeline__desc">I review every finding, cut the noise, reprioritize based on your business context, and add strategic recommendations that require human judgment — like whether your value proposition actually matches your audience's pain.</p>
+            </div>
+          </div>
+
+          <div class="timeline__step" data-step="4">
+            <div class="timeline__indicator">
+              <span class="timeline__dot"></span>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__number">04</span>
+              <h3 class="timeline__title">You get a structured report in 48 hours</h3>
+              <p class="timeline__desc">Prioritized findings, annotated screenshots, specific fix recommendations, and a short video walkthrough of the top issues. Everything you need to act — nothing you don't.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PRODUCT DEMO ======== -->
+  <section class="demo" id="example">
+    <div class="container container--wide reveal">
+      <p class="section-label">Deliverable</p>
+      <h2>See what you'll get</h2>
+      <p class="demo__intro">Here's a real audit I did for a SaaS landing page — the same process your audit follows.</p>
+
+      <div class="demo__screenshots">
+        <div class="demo__card">
+          <div class="demo__card-img">
+            <span>[ Executive Summary ]<br>Top 5 findings ranked by conversion impact</span>
+          </div>
+          <p class="demo__card-caption">Executive summary — top 5 findings ranked by conversion impact</p>
+        </div>
+        <div class="demo__card">
+          <div class="demo__card-img">
+            <span>[ Detailed Finding ]<br>CTA hierarchy analysis with annotated screenshot</span>
+          </div>
+          <p class="demo__card-caption">Detailed finding — CTA hierarchy analysis with annotated screenshot</p>
+        </div>
+        <div class="demo__card">
+          <div class="demo__card-img">
+            <span>[ Recommendation ]<br>Specific fix with before/after wireframe</span>
+          </div>
+          <p class="demo__card-caption">Recommendation — specific fix with before/after wireframe sketch</p>
+        </div>
+      </div>
+
+      <div class="demo__contrast">
+        <div class="demo__contrast-bad">
+          <span class="demo__marker">&times;</span>
+          <span>"Consider improving your CTA"</span>
+        </div>
+        <div class="demo__contrast-good">
+          <span class="demo__marker">&check;</span>
+          <span>"Your primary CTA competes with 3 secondary actions above the fold. Here's how to restructure the visual hierarchy."</span>
+        </div>
+      </div>
+
+      <a href="#pricing" class="btn">
+        <span class="btn__label">Get This For Your Site</span>
+        <span class="btn__divider" aria-hidden="true"></span>
+        <span class="btn__price">$99</span>
+        <span class="material-symbols-sharp btn__icon" aria-hidden="true">arrow_right_alt</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======== CREDIBILITY ======== -->
+  <section class="credibility" id="credibility">
+    <div class="container container--wide reveal">
+      <p class="section-label section-label--dark">Track record</p>
+      <h2>Results from my work</h2>
+
+      <div class="credibility__metrics">
+        <div class="metric-card">
+          <div class="metric-card__number">+28%</div>
+          <div class="metric-card__label">lead conversion</div>
+          <p class="metric-card__desc">After redesigning a key mobile page that generated 50% of all leads. One page. Targeted changes. Measurable impact.</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__number">+28%</div>
+          <div class="metric-card__label">lead conversion</div>
+          <p class="metric-card__desc">After optimizing the full marketing funnel — different project, different scope, same methodology. Lead quality remained unchanged — more conversions, not weaker ones.</p>
+        </div>
+      </div>
+
+      <p class="credibility__pattern">Two projects. Identical result. Not a coincidence — a pattern.</p>
+
+      <div class="about">
+        <div class="about__photo">
+          <!-- Replace with actual photo -->
+        </div>
+        <div class="about__bio">
+          <p>I'm a product designer with 8 years in B2B SaaS — complex dashboards, marketplaces, data-heavy interfaces. I've seen what converts and what doesn't across dozens of products. Now I use that expertise, augmented by AI, to deliver conversion audits that would normally take weeks — in 48 hours.</p>
+          <p class="about__location">Based in Spain · Working with clients across Europe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PRICING ======== -->
+  <section class="pricing" id="pricing">
+    <div class="container container--wide reveal">
+      <p class="section-label">Pricing</p>
+      <h2>Choose your audit</h2>
+      <p class="section-subtitle">Two tiers. One methodology. No subscriptions.</p>
+
+      <div class="pricing__cards">
+
+        <div class="pricing-card pricing-card--primary">
+          <div class="pricing-card__tier">Express Conversion Audit</div>
+          <div>
+            <span class="pricing-card__original">$199</span>
+          </div>
+          <div class="pricing-card__price">$99</div>
+          <div class="pricing-card__badge">Launch pricing — limited availability</div>
+
+          <div class="pricing-card__details">
+            <p class="pricing-card__detail"><strong>Scope:</strong> 1 landing page or conversion flow (up to 3 pages)</p>
+            <p class="pricing-card__detail"><strong>Deliverable:</strong> Structured PDF report with annotated screenshots</p>
+            <p class="pricing-card__detail"><strong>Delivery:</strong> 48 hours</p>
+            <p class="pricing-card__detail" style="margin-top: 16px;"><strong>What's inside:</strong></p>
+            <ul class="pricing-card__features">
+              <li>Prioritized findings rated by impact</li>
+              <li>Specific fix recommendations</li>
+              <li>Annotated screenshots showing exactly what to change</li>
+            </ul>
+          </div>
+
+          <a href="#" class="btn btn--full">
+            <span class="btn__label">Order Your Audit</span>
+            <span class="btn__divider" aria-hidden="true"></span>
+            <span class="btn__price">$99</span>
+            <span class="material-symbols-sharp btn__icon" aria-hidden="true">arrow_right_alt</span>
+          </a>
+        </div>
+
+        <div class="pricing-card pricing-card--secondary">
+          <div class="pricing-card__tier">Deep Conversion Audit</div>
+          <div class="pricing-card__price" style="color: var(--text-primary);">From $499</div>
+          <div class="pricing-card__badge">&nbsp;</div>
+
+          <div class="pricing-card__details">
+            <p class="pricing-card__detail"><strong>Scope:</strong> Full funnels, multi-page sites, complex conversion paths</p>
+            <p class="pricing-card__detail"><strong>Deliverable:</strong> Comprehensive report + competitive benchmarking + roadmap</p>
+            <p class="pricing-card__detail"><strong>Delivery:</strong> 1-2 weeks</p>
+          </div>
+
+          <a href="#" class="btn btn--outline btn--full">Book a free 15-min call</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FAQ ======== -->
+  <section class="faq" id="faq">
+    <div class="container reveal">
+      <h2>Questions you might have</h2>
+
+      <div class="faq__list">
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What types of pages can you audit?</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="faq-item__answer-inner">Landing pages, marketing sites, product pages, checkout flows, lead generation funnels. If it's designed to convert visitors into customers or leads — it's in scope. I don't audit complex B2B SaaS product interfaces (dashboards, admin panels) — those require user research that can't be done remotely.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>How is this different from free AI audit tools?</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="faq-item__answer-inner">Free tools give you a generic checklist. My AI agents are specifically configured to analyze conversion patterns — not just "is there a CTA?" but "is the CTA hierarchy working for this specific conversion goal?" Then I verify every finding, remove false positives, and add strategic context no AI provides. You get expert judgment at the speed of automation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What if I don't agree with the recommendations?</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="faq-item__answer-inner">The report is a starting point, not a mandate. Every recommendation includes reasoning — you'll understand not just what to change, but why. If something doesn't fit your business context, skip it and focus on what does.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>Do you implement the changes?</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="faq-item__answer-inner">No. The report is designed to be implementation-ready — specific enough for your designer or developer to act on. If you need a deeper engagement including wireframes and implementation guidance, that's what the Deep Audit is for.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>Can I see an example before I buy?</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="faq-item__answer-inner">Yes — scroll up to "See what you'll get" for a full example audit.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What's your refund policy?</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="faq-item__answer-inner">If the audit doesn't surface at least 5 actionable findings that you didn't already know about, I'll refund you in full. No questions.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER CTA ======== -->
+  <section class="footer-cta">
+    <div class="container">
+      <p class="footer-cta__heading">Your landing page has a conversion problem. Let's find it.</p>
+      <a href="#pricing" class="btn">
+        <span class="btn__label">Get Your Audit</span>
+        <span class="btn__divider" aria-hidden="true"></span>
+        <span class="btn__price">$99</span>
+        <span class="material-symbols-sharp btn__icon" aria-hidden="true">arrow_right_alt</span>
+      </a>
+      <p class="footer-cta__meta">Launch pricing (regular $199) · No calls, no contracts</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand-name">PageSignal</p>
+        <p class="footer__brand-desc">Conversion audit for landing pages & marketing sites</p>
+      </div>
+      <div class="footer__links">
+        <a href="mailto:hello@example.com">Email</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Medium</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 · Based in Spain</span>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize Lucide icons after DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
