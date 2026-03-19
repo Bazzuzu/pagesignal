@@ -1059,9 +1059,9 @@ section {
 }
 
 .demo__contrast-bad span:last-child {
-  color: var(--text-secondary);
+  /* Опционально: 4.5:1 на #F7F7F8 (bg-subtle), без opacity */
+  color: #62627a;
   text-decoration: line-through;
-  opacity: 0.7;
 }
 
 .demo__contrast-good .demo__marker {
@@ -1572,6 +1572,10 @@ section {
 }
 [data-theme="dark"] .demo__contrast {
   background: rgba(255, 255, 255, 0.04);
+}
+[data-theme="dark"] .demo__contrast-bad span:last-child {
+  /* 4.5:1+ на --bg-subtle в тёмной теме (#0A0917) */
+  color: #9898b0;
 }
 
 /* Pricing */

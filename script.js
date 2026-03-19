@@ -146,8 +146,13 @@ if (!prefersReducedMotion) {
       slide.style.opacity = offset === 0 ? '1' : '0.3';
       slide.style.pointerEvents = offset === 0 ? 'auto' : 'none';
 
-      // a11y: hide non-active slides from screen readers
+      // a11y: hide non-active slides from screen readers + pointer/axe
       slide.setAttribute('aria-hidden', offset !== 0 ? 'true' : 'false');
+      if (offset !== 0) {
+        slide.setAttribute('inert', '');
+      } else {
+        slide.removeAttribute('inert');
+      }
     });
 
     slides[current].classList.add('carousel__slide--active');
