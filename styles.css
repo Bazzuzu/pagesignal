@@ -1718,7 +1718,6 @@ section {
   /* Nav */
   .nav { padding: 0 16px; }
   .nav__links { display: none; }
-  .nav__mobile-cta { display: block; }
 
   /* Timeline: stack on mobile */
   .timeline {
