@@ -349,6 +349,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  grid-column: 3;
 }
 
 .nav__cta {
